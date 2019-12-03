@@ -1,0 +1,47 @@
+{
+  "name": "promise-timeout",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "tsc --build --force tsconfig.test.json",
+    "test": "mocha out/test/allTests.js",
+    "cover": "nyc npm test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/chai-as-promised": "^7.1.2",
+    "chai-as-promised": "^7.1.1"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.6",
+    "@types/mocha": "^5.2.7",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
+    "nyc": "^14.1.1",
+    "typescript": "^3.7.2"
+  },
+  "nyc": {
+    "all": false,
+    "sourceMap": true,
+    "instrument": true,
+    "excludeAfterRemap": true,
+    "extension": [
+      ".js",
+      ".ts"
+    ],
+    "include": [
+      "src/*.ts",
+      "out/src/*.js"
+    ],
+    "exclude": [
+      "test/**"
+    ],
+    "reporter": [
+      "text",
+      "html"
+    ]
+  }
+}

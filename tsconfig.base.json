@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "alwaysStrict": true,
+    "lib": ["es2015", "dom"],
+    "composite": true,
+    "outDir": "out",
+    "declaration": true,
+    "sourceMap": true,
+    "target": "es5",
+    "module": "CommonJS",
+    "moduleResolution": "node"
+  },
+  "compileOnSave": true
+}
