@@ -17,4 +17,28 @@ export function timeoutPromise<T>(promise, timeoutMillis: number, fallback: T = 
   promise.then(() => cancelTimeout());
 
   return Promise.race([promise, timeoutP]);
-} 
+}
+
+export function resolveAfter<T>(timeoutMillis: number, value: T = undefined) {
+  let resolve, reject;
+  let timeoutP = new Promise<T>((res,rej) => {
+    resolve = res;
+    reject = rej;
+  });
+
+  createTimeout(timeoutMillis, resolve, value);
+
+  return timeoutP;
+}
+
+export function rejectAfter<T>(timeoutMillis: number, error: T = undefined) {
+  let resolve, reject;
+  let timeoutP = new Promise<T>((res,rej) => {
+    resolve = res;
+    reject = rej;
+  });
+
+  createTimeout(timeoutMillis, reject, error);
+
+  return timeoutP;
+}
