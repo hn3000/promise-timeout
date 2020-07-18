@@ -1,8 +1,12 @@
 {
   "name": "@hn3000/promise-timeout",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "simple timed promises",
-  "keywords": [ "promise", "promises", "timeout" ],
+  "keywords": [
+    "promise",
+    "promises",
+    "timeout"
+  ],
   "main": "out/src/index.js",
   "types": "out/src/index.d.ts",
   "scripts": {
@@ -28,8 +32,7 @@
     "typescript": "^3.9.7"
   },
   "files": [
-    "out/src/**/*.js",
-    "out/src/**/*.d.ts"
+    "out/src"
   ],
   "nyc": {
     "all": false,
